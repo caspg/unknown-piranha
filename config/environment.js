@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'unknown-piranha',
+    podModulePrefix: 'pod-example/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
