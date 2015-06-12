@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'unknown-piranha',
     podModulePrefix: 'pod-example/pods',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://unknown-piranha.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
