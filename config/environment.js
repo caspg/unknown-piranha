@@ -5,7 +5,6 @@ module.exports = function(environment) {
     modulePrefix: 'unknown-piranha',
     podModulePrefix: 'unknown-piranha/pods',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
     firebase: 'https://unknown-piranha.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
