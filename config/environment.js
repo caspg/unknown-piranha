@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'unknown-piranha',
-    podModulePrefix: 'pod-example/pods',
+    podModulePrefix: 'unknown-piranha/pods',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
     firebase: 'https://unknown-piranha.firebaseio.com/',
