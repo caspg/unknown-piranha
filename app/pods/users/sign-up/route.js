@@ -29,7 +29,7 @@ export default Ember.Route.extend({
       'email': model.get('email'),
       'password': model.get('password')
     }).then(() => {
-      this.transitionTo('places');
+      this.transitionTo('places.index');
     });
   }
 });
