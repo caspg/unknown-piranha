@@ -14,18 +14,22 @@ export default Ember.Route.extend({
       ref.createUser({
         email: model.get('email'),
         password: model.get('password')
-      }, function(error, userData) {
+      }, (error, userData) => {
         if (error) {
           console.log('Error createing user:', error);
         } else {
-          this.get('session').authenticate('authenticator:firebase', {
-            'email': model.get('email'),
-            'password': model.get('password')
-          }).then(function() {
-            this.transitionTo('places');
-          }.bind(this));
+          this._loginAndRedirect(model);
         }
-      }.bind(this));
+      });
     }
+  },
+
+  _loginAndRedirect(model) {
+    this.get('session').authenticate('authenticator:firebase', {
+      'email': model.get('email'),
+      'password': model.get('password')
+    }).then(() => {
+      this.transitionTo('places');
+    });
   }
 });
