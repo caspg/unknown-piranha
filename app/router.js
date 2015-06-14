@@ -10,7 +10,11 @@ Router.map(function() {
     this.route('sign-up');
     this.route('sign-in');
   });
-  this.route('places', { path: '/' }, function() {});
+  this.route('places', { path: '/' }, function() {
+    this.route('index', { path: '/' }, function() {
+      this.route('new');
+    });
+  });
 });
 
 export default Router;
