@@ -1,6 +1,7 @@
+import UnauthenticatedRouteMixin from 'simple-auth/mixins/unauthenticated-route-mixin';
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   model: function() {
     return this.store.createRecord('user');
   },
@@ -11,8 +12,6 @@ export default Ember.Route.extend({
       this.get('session').authenticate('authenticator:firebase', {
         'email': model.get('email'),
         'password': model.get('password')
-      }).then(() => {
-        this.transitionTo('places.index');
       });
     }
   }
