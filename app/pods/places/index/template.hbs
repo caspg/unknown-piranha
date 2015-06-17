@@ -1,6 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
+      {{outlet}}
+      {{#unless isNewForm}}
+        {{link-to "Add new place" "places.index.new" class="btn btn-primary"}}
+      {{/unless}}
       <div class="panel panel-default">
         <div class="panel-body">
           <h4>Places index</h4>
@@ -8,18 +12,17 @@
       </div>
 
       {{#each place in model}}
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>{{place.name}}</h4>
-            <h5>description:</h5>
-            <p>{{place.description}}</p>
+        {{#unless place.isNew}}
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>{{place.name}}</h4>
+              <h5>description:</h5>
+              <p>{{place.description}}</p>
+            </div>
           </div>
-        </div>
+        {{/unless}}
       {{/each}}
 
-    </div>
-    <div class="col-md-offset-4 col-md-4">
-      {{outlet}}
     </div>
   </div>
 </div>
