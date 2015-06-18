@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       {{outlet}}
-      {{#unless isNewForm}}
+      {{#unless hideButton}}
         {{link-to "Add new place" "places.index.new" class="btn btn-primary"}}
       {{/unless}}
       <div class="panel panel-default">
