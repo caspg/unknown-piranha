@@ -10,6 +10,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     savePlace: function() {
       var model = this.modelFor(this.routeName);
       model.save().then(() => {
+        this.notify.success('Place was successfully saved :)');
         this.transitionTo('places.index');
       });
     }

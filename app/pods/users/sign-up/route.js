@@ -17,7 +17,8 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
         password: model.get('password')
       }, (error, userData) => {
         if (error) {
-          console.log('Error createing user:', error);
+          this.controller.set('model.email', '').set('model.password', '');
+          this.notify.alert(error.message);
         } else {
           this._loginAndRedirect(model);
         }

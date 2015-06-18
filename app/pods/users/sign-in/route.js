@@ -12,6 +12,9 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       this.get('session').authenticate('authenticator:firebase', {
         'email': model.get('email'),
         'password': model.get('password')
+      }).catch((reason) => {
+        this.controller.set('model.password', '');
+        this.notify.alert(reason.message);
       });
     }
   }
