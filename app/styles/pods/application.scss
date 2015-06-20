@@ -1,3 +1,20 @@
 body {
   background-color: #EEEEEE;
 }
+
+.navbar {
+  height: 60px;
+}
+
+.new-place-panel {
+  margin-top: 60px;
+  width: 500px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5000;
+
+  .new-place-panel-inner {
+    height: 700px;
+  }
+}
