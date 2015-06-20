@@ -41,6 +41,6 @@
     "ember-notify": "^3.3.4",
     "ember-validations": "2.0.0-alpha.3",
     "emberfire": "1.4.5",
-    "liquid-fire": "0.20.4"
+    "liquid-fire": "^0.19.4"
   }
 }
