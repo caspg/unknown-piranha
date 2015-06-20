@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
+    {{liquid-outlet class="elo"}}
     <div class="col-md-4">
-      {{outlet}}
-      {{#unless hideButton}}
+      {{#unless isNotAuthenticated}}
         {{link-to "Add new place" "places.index.new" class="btn btn-primary"}}
       {{/unless}}
       <div class="panel panel-default">
