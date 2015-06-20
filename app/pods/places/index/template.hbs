@@ -25,12 +25,12 @@
 
     </div>
     <div class="col-md-8">
-      {{google-map lat=centerLat
+      {{google-map markerInfoWindowTemplateName='map/info-window'
+                   markers=markers
+                   lat=centerLat
                    lng=centerLng
                    zoom=zoom
-                   gopt_zoomControl=false
-                   type='road'
-                   markerInfoWindowTemplateName='map/info-window'}}
+                   type='road'}}
     </div>
   </div>
 </div>
