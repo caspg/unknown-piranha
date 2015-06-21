@@ -9,6 +9,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   actions: {
     savePlace: function() {
       var model = this.modelFor(this.routeName);
+      model.setProperties({
+        "lat": this.controller.get("picker.lat"), "lng": this.controller.get("picker.lng")
+      });
       model.save().then(() => {
         this.notify.success('Place was successfully saved :)');
         this.transitionTo('places.index');

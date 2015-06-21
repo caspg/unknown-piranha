@@ -2,6 +2,11 @@
   <div class="row">
     {{liquid-outlet class="new-place-panel"}}
     <div class="col-md-4">
+      <h4>Where you want find piranha?</h4>
+      <div class="input-group">
+        {{input value=searchArea class="form-control"}}
+      </div>
+      <br>
       {{#unless isNotAuthenticated}}
         {{link-to "Add new place" "places.index.new" class="btn btn-primary"}}
       {{/unless}}
