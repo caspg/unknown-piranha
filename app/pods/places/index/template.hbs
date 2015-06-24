@@ -16,7 +16,17 @@
         </div>
       </div>
 
-      {{#each place in model}}
+    {{#ember-list items=model height=400 rowHeight=10 width=400}}
+      <div class="panel panel-default clickable-panel" {{action "focusOnPlace" place on="click"}}>
+        <div class="panel-body">
+          <h4>{{name}}</h4>
+          <h5>description:</h5>
+          <p>{{description}}</p>
+        </div>
+      </div>
+    {{/ember-list}}
+
+<!--       {{#each place in model}}
         {{#unless place.isNew}}
           <div class="panel panel-default clickable-panel" {{action "focusOnPlace" place on="click"}}>
             <div class="panel-body">
@@ -26,7 +36,7 @@
             </div>
           </div>
         {{/unless}}
-      {{/each}}
+      {{/each}} -->
 
     </div>
     <div class="col-md-8">
