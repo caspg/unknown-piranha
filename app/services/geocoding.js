@@ -16,5 +16,21 @@ export default Ember.Service.extend({
         }
       });
     });
+  },
+
+  findAddress: function(lat, lng) {
+    var latLng = new google.maps.LatLng(lat, lng);
+    var geocoder = new google.maps.Geocoder();
+    return new Promise(function(resolve, reject) {
+      geocoder.geocode({ 'latLng': latLng }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          var address = results[0].formatted_address;
+          resolve(address);
+        } else {
+          var error = ("Geocode was not successful for the following reason: " + status);
+          reject(error);
+        }
+      });
+    });
   }
 });

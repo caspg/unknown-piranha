@@ -18,7 +18,7 @@
 
       {{#each place in model}}
         {{#unless place.isNew}}
-          <div class="panel panel-default">
+          <div class="panel panel-default clickable-panel" {{action "focusOnPlace" place on="click"}}>
             <div class="panel-body">
               <h4>{{place.name}}</h4>
               <h5>description:</h5>
@@ -32,6 +32,7 @@
     <div class="col-md-8">
       {{google-map markerInfoWindowTemplateName='map/info-window'
                    markers=markers
+                   markerViewClass='map/marker'
                    lat=centerLat
                    lng=centerLng
                    zoom=zoom

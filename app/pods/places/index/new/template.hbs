@@ -5,7 +5,7 @@
     {{#em-form action="savePlace" model=model}}
       {{em-input label="name" property="name"}}
       {{em-input label="description" property="description"}}
-      {{em-input label="address" property="address"}}
+      {{em-input label="address" property="address" id="address"}}
       <div class="form-action">
         {{link-to "cancel" "places.index" class="btn btn-default" activeClass=false}}
       </div>
