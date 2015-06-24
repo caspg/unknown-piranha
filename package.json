@@ -38,6 +38,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-google-map": "0.0.21",
     "ember-idx-forms": "^0.6.0",
+    "ember-list-view": "0.0.6",
     "ember-notify": "^3.3.4",
     "ember-validations": "2.0.0-alpha.3",
     "emberfire": "1.4.5",
